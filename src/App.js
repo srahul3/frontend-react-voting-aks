@@ -57,8 +57,10 @@ function App() {
       });
   }
 
-  return (
+  return (    
     <Container className="app">
+      <div className="banner">Predict a winning team</div>
+      <br></br>
       <Row>
         {teams.map((team) => {
           return (
@@ -72,6 +74,8 @@ function App() {
           );
         })}
       </Row>
+      <br></br>
+      { voted ? <div className="foot">You have finished voting!</div> : null }      
     </Container>
   );
 }

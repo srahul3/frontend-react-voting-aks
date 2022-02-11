@@ -13,3 +13,26 @@
     }
   }
 }
+
+.banner {
+  width: 70%;
+  height: 50px;  
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;  
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: rgb(192, 45, 26);
+  color: #fff;
+}
+
+.foot {
+  width: 70%;
+  height: 50px;
+  background-color: yellow;
+  position: absolute;
+  bottom: 0;
+}
