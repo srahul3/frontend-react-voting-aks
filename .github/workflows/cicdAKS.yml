@@ -9,7 +9,7 @@ jobs:
     
     - name: Test Az      
       run: |
-        az vm list
+        az
         
     - uses: azure/login@v1
       with:
