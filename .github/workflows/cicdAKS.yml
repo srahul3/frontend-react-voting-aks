@@ -7,6 +7,10 @@ jobs:
     
     - uses: actions/checkout@master
     
+    - name: Test Az      
+      run: |
+        az vm list
+        
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
