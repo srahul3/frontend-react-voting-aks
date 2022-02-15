@@ -17,7 +17,7 @@ spec:
           # name doesnt matter since we will replace it with image substitution in actions
           image: "srahul3.azurecr.io/frontend-react-voting"
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
           env:            
             - name: BACKEND_URL
               valueFrom: 
