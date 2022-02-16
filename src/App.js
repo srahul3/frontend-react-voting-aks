@@ -9,6 +9,11 @@ function App() {
   let [teams, setTeams] = useState([]);
   let [voted, setVoted] = useState(false);
 
+  const { NODE_VOTING_BE_SVC_SERVICE_HOST } = process.env;
+  const { NODE_VOTING_BE_SVC_SERVICE_PORT_HTTP } = process.env;
+  
+  var backendUrl = "http://" + NODE_VOTING_BE_SVC_SERVICE_HOST + ":" + NODE_VOTING_BE_SVC_SERVICE_PORT_HTTP;
+
   useEffect(() => {
     setTeams(teamsJson);
     setVoted(false);
@@ -28,7 +33,7 @@ function App() {
       // body: JSON.stringify({ title: 'React PUT Request Example' })
     };
 
-    fetch('http://localhost:8080/vote/'.concat(teamId), requestOptions)
+    fetch(backendUrl.concat('/vote/'.concat(teamId)), requestOptions)
       .then(response => {
         return response.text()
       })
@@ -45,7 +50,7 @@ function App() {
   }
 
   function getVoting() {
-    fetch('http://localhost:8080/voting')
+    fetch(backendUrl.concat('/voting'))
       .then(response => {
         return response.text()
       })
