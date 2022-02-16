@@ -18,11 +18,4 @@ spec:
           image: "srahul3.azurecr.io/frontend-react-voting"
           ports:
             - containerPort: 3000
-          env:            
-            - name: BACKEND_URL
-              valueFrom: 
-                secretKeyRef:
-                  # az secret key-val vault name
-                  name: k8s-secret 
-                  # key with the given vault
-                  key: BACKEND_URL 
+
