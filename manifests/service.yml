@@ -3,7 +3,7 @@ kind: Service
 metadata:
     name: "frontend-react-voting"
     annotations:    
-        service.beta.kubernetes.io/azure-load-balancer-internal: "false"
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
     labels:
         app: "frontend-react-voting"
 spec:
