@@ -26,7 +26,7 @@ function App() {
 
     // Simple PUT request with a JSON body using fetch
     const requestOptions = {
-      method: 'PUT',
+      method: 'GET',
       headers: { 'Content-Type': 'application/json' }
       // body: JSON.stringify({ title: 'React PUT Request Example' })
     };
