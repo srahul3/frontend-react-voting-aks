@@ -4,15 +4,13 @@ import VotingCard from "./components/VotingCard";
 import teamsJson from "./vote_store/votedata.json";
 import "./assets/scss/styles.scss";
 import "bootstrap/dist/css/bootstrap.css";
+import configData from "./config.json";
 
 function App() {
   let [teams, setTeams] = useState([]);
   let [voted, setVoted] = useState(false);
-
-  const { NODE_VOTING_BE_SVC_SERVICE_HOST } = process.env;
-  const { NODE_VOTING_BE_SVC_SERVICE_PORT_HTTP } = process.env;
   
-  var backendUrl = "http://" + NODE_VOTING_BE_SVC_SERVICE_HOST + ":" + NODE_VOTING_BE_SVC_SERVICE_PORT_HTTP;
+  var backendUrl = configData.BACKEND_URL;
 
   useEffect(() => {
     setTeams(teamsJson);

@@ -6,14 +6,14 @@ function VotingCard(props) {
 
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={`${team.LogoUrl}`} />
+      <Card.Img variant="top" src={`${team.logoUrl}`} />
       <Card.Body>
-        <Card.Title>{team.Name}</Card.Title>
-        <Button disabled={voted} variant="success" onClick={() => incrementVoteCount(team.ID)}>
+        <Card.Title>{team.name}</Card.Title>
+        <Button disabled={voted} variant="success" onClick={() => incrementVoteCount(team.id)}>
           Vote
         </Button>
       </Card.Body>
-      <Card.Footer>Vote count: {team.Votes}</Card.Footer>
+      <Card.Footer>Vote count: {team.votes}</Card.Footer>
     </Card>
   );
 }
