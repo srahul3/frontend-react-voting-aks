@@ -23,4 +23,10 @@ spec:
             name: frontend-react-voting
             port:
               number: 80
+      # If no rules above match, Proxy to backend-one
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: frontend-react-voting
+          servicePort: 80
           
