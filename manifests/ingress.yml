@@ -16,8 +16,8 @@ spec:
     http:
       paths:
       # home
-      - path: /home
-        pathType: Prefix
+      - path: /
+        pathType: Exact
         backend:
           service:
             name: frontend-react-voting
