@@ -16,7 +16,7 @@ spec:
     http:
       paths:
       # home
-      - path: /
+      - path: /home
         pathType: Prefix
         backend:
           service:
