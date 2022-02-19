@@ -6,18 +6,28 @@ import "./assets/scss/styles.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import configData from "./config.json";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   let [teams, setTeams] = useState([]);
   let [voted, setVoted] = useState(false);
   
+  /**
+   * Backend server base URL
+   */
   var backendUrl = configData.BACKEND_URL;
 
   useEffect(() => {
     setTeams(teamsJson);
     setVoted(false);
+    // Init the state from backend
     getVoting();
   }, []);
 
+  /**
+   * The method send update request to increment the vode for a given candiate by callin gbackend sever
+   * @param { A unique candiate id whome you are voting for} teamId 
+   */ 
   function incrementVoteCount(teamId) {
     vote(teamId);
   }
@@ -26,7 +36,7 @@ function App() {
 
     // Simple PUT request with a JSON body using fetch
     const requestOptions = {
-      method: 'GET',
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' }
       // body: JSON.stringify({ title: 'React PUT Request Example' })
     };
@@ -39,6 +49,8 @@ function App() {
         var voteData = data ? JSON.parse(data) : {};
         if(voteData.status === 'success') {
           setVoted(true);
+
+          // Fetch the latest data
           getVoting();
         }
       })
@@ -47,6 +59,9 @@ function App() {
       });
   }
 
+  /**
+   * Gets the candidate date to be displayed
+   */
   function getVoting() {
     fetch(backendUrl.concat('/voting'))
       .then(response => {
@@ -60,7 +75,7 @@ function App() {
       });
   }
 
-  return (    
+  return (
     <Container className="app">
       <div className="banner">Predict a winning team</div>
       <br></br>
