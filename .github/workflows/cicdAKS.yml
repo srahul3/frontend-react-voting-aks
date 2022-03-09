@@ -22,7 +22,7 @@ jobs:
       uses: datamonsters/replace-action@v2
       with:
         files: './manifests/ingress2.yml'
-        replacements: '$dns_name1=${{ secrets.BACKEND_URL }},$dns_name2=${{ secrets.BACKEND_URL }}'
+        replacements: '$dns_name1=${{ secrets.DNS_NAME }},$dns_name2=${{ secrets.DNS_NAME }}'
             
     - uses: azure/login@v1
       with:
