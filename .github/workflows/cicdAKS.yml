@@ -16,7 +16,7 @@ jobs:
       uses: datamonsters/replace-action@v2
       with:
         files: './src/config.json'
-        replacements: '$$beUrl=${{ secrets.BACKEND_URL }}'
+        replacements: '$beUrl=${{ secrets.BACKEND_URL }}'
             
     - uses: azure/login@v1
       with:
