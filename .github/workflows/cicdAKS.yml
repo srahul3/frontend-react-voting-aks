@@ -11,7 +11,13 @@ jobs:
     steps:
     
     - uses: actions/checkout@master
-      
+    
+    - name: Update BE url
+      uses: datamonsters/replace-action@v2
+      with:
+        files: './src/config.json'
+        replacements: '$$beUrl=${{ secrets.BACKEND_URL }}'
+            
     - uses: azure/login@v1
       with:
         client-id: 177a8658-280d-4a4e-806e-fba4696100d6
