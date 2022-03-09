@@ -23,6 +23,12 @@ jobs:
       with:
         files: './manifests/ingress2.yml'
         replacements: '$dns_name1=${{ secrets.DNS_NAME }},$dns_name2=${{ secrets.DNS_NAME }}'
+        
+    - name: Update docker image
+      uses: datamonsters/replace-action@v2
+      with:
+        files: './manifests/deployment.yml'
+        replacements: '$image=${{ secrets.ACR_NAME }}.azurecr.io/frontend-react-voting:${{ github.sha }}'
             
     - uses: azure/login@v1
       with:
