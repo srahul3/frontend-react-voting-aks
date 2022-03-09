@@ -17,6 +17,12 @@ jobs:
       with:
         files: './src/config.json'
         replacements: '$beUrl=${{ secrets.BACKEND_URL }}'
+        
+    - name: Update dns parameters
+      uses: datamonsters/replace-action@v2
+      with:
+        files: './manifests/ingress2.yml'
+        replacements: '$dns_name1=${{ secrets.BACKEND_URL }},$dns_name2=${{ secrets.BACKEND_URL }}'
             
     - uses: azure/login@v1
       with:
