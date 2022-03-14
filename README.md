@@ -1,9 +1,10 @@
-[![Use this template](https://github.com/stack-instance/badge.svg)](https://github.com/stack-instance?stack_template_owner=srahul3&stack_template_repo=aks-acs-ingress-setup)
+[![Use this template](https://github.com/stack-instance/badge.svg)](https://github.com/stack-instance?stack_template_owner=srahul3&stack_template_repo=frontend-react-voting-aks)
 
 <p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS" width="50" height ="50"/>
     <img src="https://code.benco.io/icon-collection/azure-docs/kubernetes-services.svg" alt="AKS" width="50" height ="50"/>
     <img src="https://code.benco.io/icon-collection/azure-docs/container-registry.svg" alt="ACS" width="50" height ="50"/>
-    <img src="https://github.com/kubernetes/community/blob/master/icons/svg/resources/labeled/ing.svg" alt="Kubernetes Ingress Controller" width="50" height ="50"/>
+    <img src="https://github.com/kubernetes/community/blob/master/icons/svg/resources/labeled/ing.svg" alt="Kubernetes Ingress Controller" width="50" height ="50"/>    
 </p>
 
  <p>    
